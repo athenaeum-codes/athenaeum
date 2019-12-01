@@ -1,16 +1,26 @@
 import React, { PureComponent } from 'react'
-import Menu from '../menu'
+import Menu, { MenuItem } from '../menu'
 import Bookcase from '../bookcase'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import ActionBar from '../action-bar';
 
-
-interface Props {
+interface IGlobalProps {
 
 }
 
-export default class Index extends PureComponent<Props> {
+interface IGlobalState {
+    collections: string[]
+}
+
+export default class Index extends PureComponent<IGlobalProps, IGlobalState> {
+
+    constructor(props: IGlobalProps) {
+        super(props);
+
+        this.state = { collections: ['Books', 'Movies'] };
+    }
 
     componentDidMount() {
 
@@ -21,10 +31,11 @@ export default class Index extends PureComponent<Props> {
             <Container fluid>
                 <Row>
                     <Col sm={2}>
-                        <Menu></Menu>
+                        <Menu collections={this.state.collections}></Menu>
                     </Col>
                     <Col sm={10}>
-                        <Bookcase></Bookcase>
+                        <ActionBar colorToggle key={1} />
+                        <Bookcase key={2}></Bookcase>
                     </Col>
                 </Row>
             </Container>

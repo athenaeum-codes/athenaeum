@@ -4,10 +4,10 @@
         "author": "a collection of folktales by Calinam",
         
         "reviews": [
-            "review": {
-                
+            {
+                "user": "1234567890"
             }
-        ],
+        ]
     },
     {
         "title": "The Book of Endless Pages",
