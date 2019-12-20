@@ -1,6 +1,9 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Toggle from '../toggle';
+import Actions from '../actions';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 interface IActionBarProps {
     colorToggle?: boolean
@@ -11,7 +14,14 @@ export default function ActionBar({ }: IActionBarProps): React.ReactElement {
     return (
         <Nav className="nav justify-content-end">
             <Nav.Item key={Math.random()}>
-                <Toggle></Toggle>
+                <Container fluid>
+                    <Row>
+                        <Actions>
+                            <Actions.NewItem></Actions.NewItem>
+                        </Actions>
+                        <Toggle></Toggle>
+                    </Row>
+                </Container>
             </Nav.Item>
         </Nav>
     )
