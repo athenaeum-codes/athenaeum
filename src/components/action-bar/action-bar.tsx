@@ -7,7 +7,7 @@ interface IActionBarProps {
 }
 
 export default function ActionBar({ }: IActionBarProps): React.ReactElement {
-    //Bad, I know...
+    //Bad key, I know...
     return (
         <Nav className="nav justify-content-end">
             <Nav.Item key={Math.random()}>
