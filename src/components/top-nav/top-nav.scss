@@ -1,0 +1,9 @@
+$primary-color: rgb(107, 0, 93);
+$secondary-color: #0a0a0a;
+
+.nav-link {
+  :hover {
+    background: $primary-color;
+  }
+  background: $secondary-color;
+}

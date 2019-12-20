@@ -1,0 +1,37 @@
+$primary-color: maroon;
+$secondary-color: gray;
+
+.on {
+  background-color: $primary-color;
+}
+
+.off {
+  background-color: $secondary-color;
+}
+
+.circle {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    border-radius: 8px;
+    transition: 300ms;
+}
+
+.circle.on {
+  background-color: rgb(0, 0, 0);
+  left: 14px;
+}
+
+.circle.off {
+  background-color: rgb(0, 0, 0);
+  left: -6px;
+}
+
+.toggle {
+  border-radius: 10px;
+  height: 20px;
+  line-height: 12px;
+  color: white;
+  width: 40px;
+}
