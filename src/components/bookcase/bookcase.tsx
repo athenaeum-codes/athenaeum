@@ -22,16 +22,19 @@ export default class Bookcase extends Component<IBookcaseProps, IBookcaseState> 
 
     constructor(props: IBookcaseProps) {
         super(props);
-        this.state = { books: props.books ? props.books : DefaultBooks,
-            categories: ["All","Fantasy"]};
+        this.state = {
+            books: props.books ? props.books : DefaultBooks,
+            categories: ["All", "Fantasy"]
+        };
     }
 
     render() {
-        let categories = this.state.categories;
+        let { categories } = this.state;
+        let { collection } = this.props;
         return (
             <div>
                 <TopNav categories={categories} />
-                {categories.map(category => <Route path={`/${category}`} component={Category}></Route>)}
+                {categories.map(category => <Route path={`/${collection}/${category}`}><Category key={`Category-${collection}`}></Category></Route>)}
                 <Shelf books={this.state.books} />
             </div>
         );

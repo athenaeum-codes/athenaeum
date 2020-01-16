@@ -5,7 +5,7 @@ interface BookProps {
     title?: string;
 }
 
-const AthanaeumBook: React.FC<BookProps> = ({ author, title }) => {
+const AthenaeumBook: React.FC<BookProps> = ({ author, title }) => {
     const [red,] = useState(Math.random() * 255);
     const [green,] = useState(Math.random() * 255);
     const [blue,] = useState(Math.random() * 255);
@@ -18,9 +18,9 @@ const AthanaeumBook: React.FC<BookProps> = ({ author, title }) => {
     );
 }
 
-AthanaeumBook.defaultProps = {
+AthenaeumBook.defaultProps = {
     author: "Brandon Sanderson",
     title: "The Way of Kings"
 }
 
-export default AthanaeumBook;
+export default AthenaeumBook;

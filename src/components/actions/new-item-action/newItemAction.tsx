@@ -10,6 +10,10 @@ import React, { Component } from 'react';
     
     export default class NewItemAction extends Component<INewItemActionProps, INewItemActionState> {
         state = {}
+
+        handleCLick() {
+            
+        }
     
         render() {
             return (

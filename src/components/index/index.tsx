@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import ActionBar from '../action-bar';
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 interface IGlobalProps {
 
@@ -30,12 +30,20 @@ export default class Index extends PureComponent<IGlobalProps, IGlobalState> {
                 <Container fluid>
                     <Row>
                         <Col sm={2}>
-                            <Menu key="Menu" collections={this.state.collections}></Menu>
+                            <Menu collections={this.state.collections}></Menu>
                         </Col>
                         <Col sm={10}>
                             <ActionBar colorToggle key={1} />
-                            <Bookcase key={2} collection={3}></Bookcase>
+                            <Switch>
+                                {this.state.collections.map(collection => {
+                                    console.log(collection);
+                                    return <Route path={`/${collection}`} key={`${collection} route`}>
+                                        <Bookcase key={collection} collection={3}></Bookcase>
+                                    </Route>
+                                })}
+                            </Switch>
                         </Col>
+
                     </Row>
                 </Container>
             </Router>

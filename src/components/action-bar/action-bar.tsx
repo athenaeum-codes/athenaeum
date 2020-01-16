@@ -9,7 +9,7 @@ interface IActionBarProps {
     colorToggle?: boolean
 }
 
-export default function ActionBar({ }: IActionBarProps): React.ReactElement {
+export default function ActionBar(props: IActionBarProps): React.ReactElement {
     //Bad key, I know...
     return (
         <Nav className="nav justify-content-end">
