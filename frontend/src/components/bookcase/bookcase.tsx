@@ -3,7 +3,6 @@ import './bookcase.scss';
 
 import Shelf from '../shelf';
 import Book from '../../types/book';
-import DefaultBooks from '../../data/books.json';
 import TopNav from '../top-nav';
 import Category from '../category';
 import { Route } from 'react-router';
@@ -17,6 +16,13 @@ interface IBookcaseState {
     books: Book[]
     categories: string[]
 }
+
+const DefaultBooks = [
+    {
+        title: 'Farenheit 451',
+        author: 'Ray'
+    }
+];
 
 export default class Bookcase extends Component<IBookcaseProps, IBookcaseState> {
 
